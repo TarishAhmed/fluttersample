@@ -50,6 +50,6 @@ class HomeScreen extends StatelessWidget {
     }
     return inProgress && progressName != null
         ? InProgressMessage(progressName: progressName, screenName: "HomeScreen")
-        : ColorGrid(colors: colors, onColorTap: onColorTap);
+        : ComicList(colors: colors, onColorTap: onColorTap);
   }
 }

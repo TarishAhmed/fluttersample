@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:sample_app/data/colors_repository.dart';
+import 'package:sample_app/data_model/comic_data_model.dart';
 
 class ColorsViewModel extends ChangeNotifier {
   final ColorsRepository? colorsRepository;
@@ -15,6 +16,16 @@ class ColorsViewModel extends ChangeNotifier {
     await colorsRepository!.fetchColors();
     fetchingColors = false;
     notifyListeners();
+  }
+
+   Future<List<ComicModel>> getComics() async {
+    List<ComicModel> comicList = [];
+    fetchingColors = true;
+    notifyListeners();
+    comicList = await colorsRepository!.getComics();
+    fetchingColors = false;
+    notifyListeners();
+    return comicList;
   }
 
   clearColors() async {
