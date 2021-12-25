@@ -2,14 +2,14 @@
 import 'package:common/cache/preference.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sample_app/router/my_app_router_delegate_04.dart';
+import 'package:sample_app/router/my_app_router_delegate.dart';
 import 'package:sample_app/viewmodels/auth_view_model.dart';
 import 'package:sample_app/viewmodels/colors_view_model.dart';
 
 import 'configure_nonweb.dart' if (dart.library.html) 'configure_web.dart';
 import 'data/auth_repository.dart';
 import 'data/colors_repository.dart';
-import 'router/my_app_route_information_parser_04.dart';
+import 'router/my_app_route_information_parser.dart';
 
 void main() {
   configureApp();
@@ -48,6 +48,7 @@ class _MyAppState extends State<MyApp> {
         ),
       ],
       child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         routerDelegate: delegate,
         routeInformationParser: parser,
         backButtonDispatcher: RootBackButtonDispatcher(),

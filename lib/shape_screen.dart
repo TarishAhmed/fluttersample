@@ -52,7 +52,7 @@ class ShapeScreen extends StatelessWidget {
       progressName = "Logout";
     } else if (colorsViewModel.clearingColors) {
       inProgress = true;
-      progressName = "Clearing colors";
+      progressName = "Clearing comics";
     } else {
       inProgress = false;
       progressName = null;

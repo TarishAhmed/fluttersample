@@ -134,7 +134,7 @@ class MyAppRouterDelegate extends RouterDelegate<MyAppConfiguration>
     if (loggedIn == null) {
       process = 'Checking login state...';
     } else if (colors == null) {
-      process = 'Fetching colors...';
+      process = 'Fetching comics...';
     } else {
       process = "Unidentified process";
     }
