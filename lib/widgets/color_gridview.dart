@@ -28,14 +28,12 @@ class ComicList extends StatefulWidget {
 }
 
 class _ComicListState extends State<ComicList> {
-  late ColorsViewModel colorsViewModel;
   List<ComicModel> comicList = [];
   int comicLimit = 20;
 
   @override
   Widget build(BuildContext context) {
-    //context.watch<ColorsViewModel>();
-    colorsViewModel = Provider.of<ColorsViewModel>(context,listen: false);
+    final ColorsViewModel colorsViewModel = Provider.of<ColorsViewModel>(context,listen: false);
     return FutureBuilder<List<ComicModel>>(
 
       future: colorsViewModel.getComics(),
@@ -87,9 +85,6 @@ class _ComicListState extends State<ComicList> {
   void initState() {
 
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
-      colorsViewModel = Provider.of<ColorsViewModel>(context,listen: false);
-    });
-  }
+
 
 }
