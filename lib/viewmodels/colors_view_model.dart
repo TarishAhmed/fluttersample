@@ -21,10 +21,10 @@ class ColorsViewModel extends ChangeNotifier {
    Future<List<ComicModel>> getComics() async {
     List<ComicModel> comicList = [];
     fetchingColors = true;
-    notifyListeners();
+    // notifyListeners();
     comicList = await colorsRepository!.getComics();
     fetchingColors = false;
-    notifyListeners();
+    // notifyListeners();
     return comicList;
   }
 
