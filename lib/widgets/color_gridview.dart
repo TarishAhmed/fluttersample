@@ -86,5 +86,5 @@ class _ComicListState extends State<ComicList> {
 
     super.initState();
 
-
+  }
 }
